@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "task-list-with-angular-js"
+    }
+  },
+  "defaultProject": "task-list-with-angular-js",
+  "cli": {
+    "analytics": false
+  }
 }
