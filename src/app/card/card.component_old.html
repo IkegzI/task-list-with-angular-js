@@ -1,0 +1,12 @@
+<div class="card">
+  <h2>{{ title }}</h2>
+  <button [disabled]="disabled">Enable</button>
+  <p>
+    {{ text }}
+  </p>
+  <strong>Number: {{ number }}</strong>
+<em>{{ array }}</em>
+  <pre>{{ obj | json }}</pre>
+  <p>{{ getInfo() }}</p>
+  <img [src]="imgUrl" alt="">
+</div>
