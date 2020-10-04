@@ -10,18 +10,20 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
-import { FormComponent } from './form/form.component';
 
+import { HttpClientModule }   from '@angular/common/http';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    FormComponent
+    TaskComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

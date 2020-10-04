@@ -1,8 +1,21 @@
 import {Component, Input} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 export interface Card {
   title: string,
-  text: string
+  text: string,
+}
+
+export interface Todo {
+  title: string,
+  id: string,
+  todos: []
+}
+
+export interface Task {
+  id_task: string,
+  text: string,
+  isCompleted: false
 }
 
 @Component({
@@ -13,34 +26,38 @@ export interface Card {
 
 export class AppComponent {
 
+  @Input() todo: Todo;
+  @Input() task: Task;
   @Input() card: Card;
   @Input() index: number;
-
-  noCards = '11111'
-
-  toggle = true;
-
-  cards: Card[] = [
-    {
-      title: 'Card 1',
-      text: 'This is card 1'
-    }, {
-      title: 'Card 2',
-      text: 'This is card 2'
-    }, {
-      title: 'Last Card',
-      text: 'This is card last'
-    }, {
-      title: 'Last Card',
-      text: 'This is card last'
-    }
-  ]
+  @Input() index_task: number;
 
   toggleCards() {
     this.toggle = !this.toggle
   }
 
-  getCards() {
+  constructor(private http: HttpClient) {
   }
 
+  getResponseAnswer(msg) {
+    this.arr = msg;
+    this.todoses = this.arr
+    return msg
+  }
+
+  getCards() {
+    this.http.get('https://floating-cliffs-22263.herokuapp.com/projects.json', {reportProgress: true}).subscribe(msg => this.getResponseAnswer(msg));
+  }
+
+  ngOnInit() {
+    this.getCards()
+  }
+
+  arr = []
+
+
+  noCards = '11111'
+
+  toggle = true;
+  todoses: Todo[] = this.arr
 }
