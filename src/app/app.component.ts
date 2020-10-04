@@ -10,18 +10,15 @@ export interface Card {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-
-
-  getCards() {
-  }
 
   @Input() card: Card;
   @Input() index: number;
 
+  noCards = '11111'
 
-  toggle = true
-
+  toggle = true;
 
   cards: Card[] = [
     {
@@ -43,5 +40,7 @@ export class AppComponent {
     this.toggle = !this.toggle
   }
 
+  getCards() {
+  }
 
 }
