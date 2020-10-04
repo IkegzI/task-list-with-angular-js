@@ -1,6 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Injectable } from '@angular/core';
 
 export interface Card {
   title: string,
@@ -16,14 +14,8 @@ export class AppComponent {
   totalAngularPackages;
 
   // constructor(private http_: Http) { }
-  constructor(private httpClient: HttpClient) {
-  }
 
   getCards() {
-    console.log('1')
-    this.httpClient.get<any>('http://localhost:3000').subscribe((data: any[]) => {
-      console.log(data)
-    });
   }
 
   @Input() card: Card;
