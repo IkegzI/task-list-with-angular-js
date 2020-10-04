@@ -11,9 +11,7 @@ export interface Card {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  totalAngularPackages;
 
-  // constructor(private http_: Http) { }
 
   getCards() {
   }
