@@ -1,12 +1,11 @@
 <div class="card">
   <h2 [ngStyle]="{
   color: todo.title.length < 5 ? 'black' : 'grey'
-  }">{{ index }} {{ todo.title }}</h2>
+  }">{{ todo.title }}</h2>
 
   <p [ngStyle]="{
    color: textColor
   }">
-    {{ todo.id }}
   </p>
   <p>
     <app-task

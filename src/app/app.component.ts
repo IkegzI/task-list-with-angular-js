@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, Input} from '@angular/core'
+import {HttpClient} from '@angular/common/http'
 
 export interface Card {
   title: string,
@@ -26,11 +26,11 @@ export interface Task {
 
 export class AppComponent {
 
-  @Input() todo: Todo;
-  @Input() task: Task;
-  @Input() card: Card;
-  @Input() index: number;
-  @Input() index_task: number;
+  @Input() todo: Todo
+  @Input() task: Task
+  @Input() card: Card
+  @Input() index: number
+  @Input() index_task: number
 
   toggleCards() {
     this.toggle = !this.toggle
@@ -40,13 +40,13 @@ export class AppComponent {
   }
 
   getResponseAnswer(msg) {
-    this.arr = msg;
+    this.arr = msg
     this.todoses = this.arr
     return msg
   }
 
   getCards() {
-    this.http.get('https://floating-cliffs-22263.herokuapp.com/projects.json', {reportProgress: true}).subscribe(msg => this.getResponseAnswer(msg));
+    this.http.get('https://floating-cliffs-22263.herokuapp.com/projects.json', {reportProgress: true}).subscribe(msg => this.getResponseAnswer(msg))
   }
 
   ngOnInit() {
@@ -56,8 +56,8 @@ export class AppComponent {
   arr = []
 
 
-  noCards = '11111'
+  noCards = true
 
-  toggle = true;
+  toggle = true
   todoses: Todo[] = this.arr
 }
